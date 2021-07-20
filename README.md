@@ -8,9 +8,9 @@ The dataset can be found [here](https://www.kaggle.com/c/painter-by-numbers/data
 ## Goal
 This project aims to predict whether two artworks are by the same artist or not using a neural network.
 
-![Monet](https://d32dm0rphc51dk.cloudfront.net/95EYpbkhcWsEKG18njyhCw/large.jpg)
+![VanGogh](https://www.vangoghgallery.com/skin/img/sunflower_full.jpg)
 and
-![VanGogh](https://www.moma.org/media/W1siZiIsIjQ2ODMxNiJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg?sha=5537528c46481603)
+![Cezanne](https://uploads1.wikiart.org/images/paul-cezanne/still-life-with-skull-1898.jpg!Large.jpg)
 are not by the same artist.
 
 ## About the dataset
