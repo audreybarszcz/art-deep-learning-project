@@ -8,9 +8,9 @@ The dataset can be found [here](https://www.kaggle.com/c/painter-by-numbers/data
 ## Goal
 This project aims to predict whether two artworks are by the same artist or not using a neural network.
 
-![Guernica](https://upload.wikimedia.org/wikipedia/commons/0/0b/GUERNICA.jpg)
+![Monet](https://d32dm0rphc51dk.cloudfront.net/95EYpbkhcWsEKG18njyhCw/large.jpg)
 and
-![Irises](https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Irises-Vincent_van_Gogh.jpg/1200px-Irises-Vincent_van_Gogh.jpg)
+![VanGogh](https://www.moma.org/media/W1siZiIsIjQ2ODMxNiJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg?sha=5537528c46481603)
 are not by the same artist.
 
 ## About the dataset
