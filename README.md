@@ -39,7 +39,7 @@ Functions.py includes 3 simple functions used in the notebooks. It includes func
 In the notebook where pre-trained models are loaded in `model = models.{alexnet}(pretrained=True)`, AlexNet can be replaced with other pre-trained image classification models or `pretrained` can be set to `False` to use the model architecture and train all the weights of the model.
 
 ## Data Preprocessing
-All images used for this task were resized first resized to an area of 256x256 with the original aspect ratio maintained. After resizing, a center crop of size 224x224 was used as input to the image classification model.
+All images used for this task were resized to an area of 256x256 while maintaining the original aspect ratio. After resizing, a center crop of size 224x224 was used as input to the image classification model.
 
 ## Models
 Two different approaches to this task were taken: a Siamese network and a simple classification model.
