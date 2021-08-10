@@ -48,4 +48,4 @@ With more time, we wanted to try training our own image classifier network train
 
 We also wanted to try performing this task using different pre-train image classification networks such as VGG-19 or ResNet34.
 
-Another approach we could have taken was to train 52 individual models to classify whether a work was by a single artist of not and then aggregate the results of the 52 individal models to then answer the question of same artist or different artist.
+Another approach we could have taken was to train 52 individual models to classify whether a work was by a single artist of not and then aggregate the results of the individal models to then answer the question of same artist or different artist.
