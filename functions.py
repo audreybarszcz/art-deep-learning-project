@@ -1,26 +1,13 @@
-import os
 import cv2
-import pandas as pd
 import numpy as np
 import torch
-import torch.nn as nn
-import torch.optim as optim
-from torch.utils.data import Dataset, DataLoader
-import matplotlib.pyplot as plt
-from sklearn.preprocessing import StandardScaler
-from tqdm.notebook import tqdm
-from torchsummary import summary
-
-# data augmentation
-import albumentations as A
-from albumentations.pytorch import ToTensorV2
-
-# pretrained models
 import torchvision
-from torchvision import models, transforms
 
 
 def resize_img(path, new_path, size):
+    """
+    Resize image with black borders and write to new folder.
+    """
     desired_size = size
     img = cv2.imread(path)
     old_size = img.shape[:2]
@@ -42,6 +29,9 @@ def resize_img(path, new_path, size):
     
 
 def center_crop(path, new_path, size):
+    """
+    Center crop image with square area.
+    """
     dim = (size, size)
     img = cv2.imread(path)
     width, height = img.shape[1], img.shape[0]
@@ -57,6 +47,9 @@ def center_crop(path, new_path, size):
     
     
 def load_image(path):
+    """
+    Perform necessary reading in and transformations for pretrained image classification models.
+    """
     img = cv2.imread(path)
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     img = np.transpose(img, (2, 0, 1))
@@ -65,22 +58,3 @@ def load_image(path):
     img = normalize(img)
     return img
     
-    
-class ContrastiveLoss(torch.nn.Module):
-    def __init__(self, margin=1.0):
-        super(ContrastiveLoss, self).__init__()
-        self.margin = margin
-        self.eps = 1e-9
-
-    def forward(self, hidden_x1, hidden_x2, y):
-        # euclidian distance
-        diff = hidden_x1 - hidden_x2
-        dist_sq = torch.sum(torch.pow(diff, 2), 2)
-        dist = torch.sqrt(dist_sq + self.eps)
-
-        mdist = self.margin - dist
-        dist = torch.maximum(mdist, torch.zeros(mdist.shape))
-        loss = ((y * dist_sq) + ((1 - y) * torch.pow(dist, 2))) / 2
-        # average loss over a batch
-        avg_loss = torch.sum(loss)/hidden_x1.shape[1]
-        return avg_loss
