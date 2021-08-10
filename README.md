@@ -27,14 +27,14 @@ Only artists with works in both the training and test dataset were chosen. Of th
 
 To create the matched pairs dataset, each of the 13,894 works were randomly paired with 36 other works to yield the valid and invalid pairs. 
 
-To make the training set more balanced, and managable in terms of size, 5% of the invalid training pairs were chosen from all invalid pairs to yield a ratio of 1.75:1 invalid to valid pairs.
+To make the training set more balanced, and managable, in terms of size, 5% of the invalid training pairs were chosen from all invalid pairs to yield a ratio of 1.75:1 invalid to valid pairs.
 
 ## How to run the notebook
 Download the data from [Kaggle](https://www.kaggle.com/c/painter-by-numbers/data).
 
 The Siamese model notebook includes all the data preprocessing steps to choose a subset of artists to work with, create the matched pairs dataframe, and resize the images.
 
-Functions.py includes 3 simple functions used in the notebooks. It includes 2 functions to resize images and 1 function to read in the images while training/testing.
+Functions.py includes 3 simple functions used in the notebooks. It includes functions to resize images, crop images, and read in the images while training/testing.
 
 In the notebook where pre-trained models are loaded in `model = models.{alexnet}(pretrained=True)`, AlexNet can be replaced with other pre-trained image classification models or pre-trained can be set to `False` to use the model architecture and train all the weights of the model.
 
