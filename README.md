@@ -14,7 +14,7 @@ Same artist (Matisse):
 
 Different artists (Seurat & Signac):
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/A_Sunday_on_La_Grande_Jatte%2C_Georges_Seurat%2C_1884.jpg/1200px-A_Sunday_on_La_Grande_Jatte%2C_Georges_Seurat%2C_1884.jpg" width="444" height="300">  <img src="https://impressionistarts.com/static/81cb87fd29c30d1cd5e1e0c46b827e3e/14b42/paul-signac-in-the-time-of-harmony.jpg" width="400" height="300">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/A_Sunday_on_La_Grande_Jatte%2C_Georges_Seurat%2C_1884.jpg/1200px-A_Sunday_on_La_Grande_Jatte%2C_Georges_Seurat%2C_1884.jpg" width="391" height="263">  <img src="https://impressionistarts.com/static/81cb87fd29c30d1cd5e1e0c46b827e3e/14b42/paul-signac-in-the-time-of-harmony.jpg" width="350" height="263">
 
 Additionally, this problem has highly imbalanced classes. Most paintings are not by the same artist, the original Kaggle dataset has 1.3% same artist pairs and 98.7% different artist pairs.
 
