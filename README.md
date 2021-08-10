@@ -6,7 +6,7 @@ Contributors: Audrey Barszcz & Daniel Carrera
 The original dataset can be found [here](https://www.kaggle.com/c/painter-by-numbers/data).
 
 ## Goal
-This project aims to predict whether two artworks are by the same artist or not using a neural network.
+This project aims to predict whether two artworks are by the same artist or not using a neural network. This is a difficult problem, as portrayed by the examples below: a single artist can have multiple styles or paint radically different subjects, but should still be classified as the same artist, or multiple artists can have very similar styles with a similar subject, but should be classified as not the same artist.
 
 Same artist (Matisse):
 
