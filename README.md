@@ -3,7 +3,7 @@ USF MSDS Deep Learning Final Project
 
 Contributors: Audrey Barszcz & Daniel Carrera
 
-The dataset can be found [here](https://www.kaggle.com/c/painter-by-numbers/data)
+The original dataset can be found [here](https://www.kaggle.com/c/painter-by-numbers/data).
 
 ## Goal
 This project aims to predict whether two artworks are by the same artist or not using a neural network.
