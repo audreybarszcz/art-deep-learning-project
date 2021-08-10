@@ -34,9 +34,9 @@ Download the data from [Kaggle](https://www.kaggle.com/c/painter-by-numbers/data
 
 The Siamese model notebook includes all the data preprocessing steps to choose a subset of artists to work with, create the matched pairs dataframe, and resize the images.
 
-Functions.py includes 3 simple functions used in the notebooks. It includes functions to resize images, crop images, and read in the images while training/testing.
+Functions.py includes 3 simple functions used in the notebooks. It includes functions to resize images, crop images, and read in the images while training and testing.
 
-In the notebook where pre-trained models are loaded in `model = models.{alexnet}(pretrained=True)`, AlexNet can be replaced with other pre-trained image classification models or pre-trained can be set to `False` to use the model architecture and train all the weights of the model.
+In the notebook where pre-trained models are loaded in `model = models.{alexnet}(pretrained=True)`, AlexNet can be replaced with other pre-trained image classification models or `pretrained` can be set to `False` to use the model architecture and train all the weights of the model.
 
 ## Data Preprocessing
 All images used for this task were resized first resized to an area of 256x256 with the original aspect ratio maintained. After resizing, a center crop of size 224x224 was used as input to the image classification model.
