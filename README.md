@@ -16,13 +16,36 @@ Different artists (Seurat & Signac):
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/A_Sunday_on_La_Grande_Jatte%2C_Georges_Seurat%2C_1884.jpg/1200px-A_Sunday_on_La_Grande_Jatte%2C_Georges_Seurat%2C_1884.jpg" width="444" height="300">  <img src="https://impressionistarts.com/static/81cb87fd29c30d1cd5e1e0c46b827e3e/14b42/paul-signac-in-the-time-of-harmony.jpg" width="400" height="300">
 
+Additionally, this problem has highly imbalanced classes. Most paintings are not by the same artist, the original Kaggle dataset has 1.3% same artist pairs and 98.7% different artist pairs.
+
 ## About the dataset
 The dataset includes 103,250 unique images of artworks by 1659 different artists, with up to 500 works per artist.
 
-For this project, however, a subset of artists were chosen to train and test on.
+For this project, however, a subset of artists were chosen to train and test on. 
+
+Only artists with works in both the training and test dataset were chosen. Of those 1500 artists, 52 artists were chosen. Most of these artists were impressionist/post-impressionist artists; many of the artists had similar styles. A total of 13,894 were used in the task (10,720 train, 3,174 test). Each artist had between 43-500 works across both training and test sets.
+
+To create the matched pairs dataset, each fo the 13,894 works were randomly paired with 36 other works to yield the valid and invalid pairs. 
+
+To make the training set more balanced, and managable in terms of size, 5% of the invalid training pairs were chosen from all invalid pairs to yield a ratio of 1.75:1 invalid to valid pairs.
 
 ## Data Preprocessing
-All images used for this task were resized to 224x224.
+All images used for this task were resized first resized to an area of 256x256 with the original aspect ratio maintained. After resizing, a center crop of size 224x224 was used as input to the image classification model.
 
-## Model
-A MobileNetV3-small pretrained network is used for this project. The final two linear layers are re-trained for this particular task.
+## Models
+Two different approaches to this task were taken: a Siamese network and a simple classification model.
+Both approaches used a pre-trained AlexNet image classification model to extract features from images.
+
+For the Siamese network, the final classifier layer was removed. Training involved passing 2 different images through the same AlexNet model, followed by concatenating the output of the two images from AlexNet. The combined tensor of features was then passed through 2 linear layers to yield the binary output of whether or not two works were by the same artist.
+
+For the classification model, the final classifier layer was replaced with a linear layer going from 4096 features to 52 features, which we could then pass through softmax to yield the artist prediction for a single image. To yield predictions of whether or not two works were by the same artist, both images were passed through the model trained to classify artists and the two outputs were compared to yield the final binary prediction.
+
+## Results
+Various hyperparameters were tried for the two approaches:
+
+## Future directions
+With more time, we wanted to try training our own image classifier network trained on artworks, since perhaps features that are good for classifying photo images are not as relevant for art.
+
+We also wanted to try performing this task using different pre-train image classification networks such as VGG-19 or ResNet34.
+
+Another approach we could have taken was to train 52 individual models to classify whether a work was by a single artist of not and then aggregate the results of the 52 individal models to then answer the question of same artist or different artist.
