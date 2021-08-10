@@ -23,9 +23,9 @@ The dataset includes 103,250 unique images of artworks by 1659 different artists
 
 For this project, however, a subset of artists were chosen to train and test on. 
 
-Only artists with works in both the training and test dataset were chosen. Of those 1500 artists, 52 artists were chosen. Most of these artists were impressionist/post-impressionist artists; many of the artists had similar styles. A total of 13,894 were used in the task (10,720 train, 3,174 test). Each artist had between 43-500 works across both training and test sets.
+Only artists with works in both the training and test dataset were chosen. Of those 1500 artists, 52 artists were chosen. Most of these artists were impressionist/post-impressionist artists; many of the artists had similar styles. A total of 13,894 images were used in the task (10,720 train, 3,174 test). Each artist had between 43-500 works across both training and test sets.
 
-To create the matched pairs dataset, each fo the 13,894 works were randomly paired with 36 other works to yield the valid and invalid pairs. 
+To create the matched pairs dataset, each of the 13,894 works were randomly paired with 36 other works to yield the valid and invalid pairs. 
 
 To make the training set more balanced, and managable in terms of size, 5% of the invalid training pairs were chosen from all invalid pairs to yield a ratio of 1.75:1 invalid to valid pairs.
 
