@@ -34,9 +34,9 @@ Download the data from [Kaggle](https://www.kaggle.com/c/painter-by-numbers/data
 
 The Siamese model notebook includes all the data preprocessing steps to choose a subset of artists to work with, create the matched pairs dataframe, and resize the images.
 
-Functions.py includes 7 functions used in the notebooks. It includes 3 functions to resize images, crop images, and read in the images while training and testing. The other 4 functions are for running a training epoch and for performing validation on each of the types of models, respectively.
+`functions.py` includes 7 functions used in the notebooks. It includes 3 functions to resize images, crop images, and read in the images while training and testing. The other 4 functions are for running a training epoch and for performing validation on each of the types of models, respectively.
 
-Classes.py includes 3 classes, a custom Siamese network model class and 2 dataset classes. The `ArtistDataset` is used for training a model on classification, passing the model one image at a time. The `ArtistPairsDataset` is used for training a model to perform the binary classification problem, passing the model two images at a time.
+`classes.py` includes 3 classes, a custom Siamese network model class and 2 dataset classes. The `ArtistDataset` is used for training a model on classification, passing the model one image at a time. The `ArtistPairsDataset` is used for training a model to perform the binary classification problem, passing the model two images at a time.
 
 In the notebook where pre-trained models are loaded in `model = models.{alexnet}(pretrained=True)`, AlexNet can be replaced with other pre-trained image classification models or `pretrained` can be set to `False` to use the model architecture and train all the weights of the model.
 
