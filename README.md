@@ -47,7 +47,7 @@ Both approaches used a pre-trained AlexNet image classification model to extract
 
 The AlexNet model incudes 3 major blocks: the feature extractor, an average pooling layer, and the classification block. All changes to the network were in the classification block which consists of 3 linear layers.
 
-For the Siamese network, the final layer of the classifier block was removed. Training involved passing 2 different images through the same AlexNet model, followed by concatenating the output of the two images from AlexNet. The combined tensor of features was then passed through 2 linear layers to yield the binary output of whether or not two works were by the same artist.
+For the Siamese network, the last 2 layers of the classifier block was removed. Training involved passing 2 different images through the same AlexNet model, followed by concatenating the output of the two images from AlexNet. The combined tensor of features was then passed through 2 linear layers to yield the binary output of whether or not two works were by the same artist.
 
 For the classification model, the final classifier layer was replaced with a linear layer going from 4096 features to 52 features, which we could then pass through softmax to yield the artist prediction for a single image. To yield predictions of whether or not two works were by the same artist, both images were passed through the model trained to classify artists and the two outputs were compared to yield the final binary prediction.
 
