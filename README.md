@@ -47,16 +47,16 @@ Both approaches used a pre-trained AlexNet image classification model to extract
 
 The AlexNet model incudes 3 major blocks: the feature extractor, an average pooling layer, and the classification block. All changes to the network were in the classification block which consists of 3 linear layers.
 
-For the Siamese network, the last 2 layers of the classifier block was removed. Training involved passing 2 different images through the same AlexNet model, followed by concatenating the output of the two images from AlexNet. The combined tensor of features was then passed through 2 linear layers to yield the binary output of whether or not two works were by the same artist.
+For the Siamese network, the last 2 layers of the classifier block were removed. Training involved passing 2 different images through the same AlexNet model, followed by concatenating the output of the two images from AlexNet at the end of the removed layers. The combined tensor of features was then passed through 2 linear layers to yield the binary output of whether or not two works were by the same artist.
 
-For the classification model, the final classifier layer was replaced with a linear layer going from 4096 features to 52 features, which we could then pass through softmax to yield the artist prediction for a single image. To yield predictions of whether or not two works were by the same artist, both images were passed through the model trained to classify artists and the two outputs were compared to yield the final binary prediction.
+For the classification model, the final classifier layer was replaced with a linear layer going from 4096 features to 52 features, which was then passed to argmax to yield the artist prediction for a single image. To yield predictions of whether or not two works were by the same artist, both images were passed through the model trained to classify artists and the two outputs were compared to yield the final binary prediction.
 
 ## Results
 Various hyperparameters were tried for the two approaches:
 
 ## Future directions
-With more time, we wanted to try training our own image classifier network trained on artworks, since perhaps features that are good for classifying photo images are not as relevant for art.
+With more time, we wanted to try training our own image classifier network trained on artworks, since perhaps features that are good for classifying photo images are not as relevant to art.
 
-We also wanted to try performing this task using different pre-train image classification networks such as VGG-19 or ResNet34.
+We also wanted to try performing this task using different pre-trained image classification networks such as VGG-19 or ResNet34.
 
 Another approach we could have taken was to train 52 individual models to classify whether a work was by a single artist of not and then aggregate the results of the individal models to then answer the question of same artist or different artist.
