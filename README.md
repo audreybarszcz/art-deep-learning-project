@@ -59,9 +59,10 @@ Of the two approaches taken, the best model of each type was tested.
 The Siamese network model was unable to discriminate between pairs that were by the same artist or different artists, classifying all pairs as by different artists. (AUC=0.5)
 
 The classifier model accurately predicted artist 85.9% of the time during training and 44.8% of the time on validation. When classifying whether a pair of images were by the same artist, the model achieved 95.5% accuracy with an AUC of 0.632 on the unbalanced test dataset. The confusion matrix is below:
-| 9744 | 258 |
-|---|---|
-| 200 | 82 |
+|   | Same | Different |
+|---|---|---|
+| 1 | 9744 | 258 |
+| 0 | 200 | 82 |
 
 ## Future directions
 With more time, we wanted to try training our own image classifier network trained on artworks, since perhaps features that are good for classifying photo images are not as relevant to art.
