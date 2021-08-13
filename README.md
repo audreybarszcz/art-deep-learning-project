@@ -6,7 +6,7 @@ Contributors: Audrey Barszcz & Daniel Carrera
 The original dataset can be found [here](https://www.kaggle.com/c/painter-by-numbers/data).
 
 ## Goal
-This project aims to predict whether two artworks are by the same artist or not using a neural network. This is a difficult problem, as portrayed by the examples below: a single artist can have multiple styles or paint radically different subjects, but should still be classified as the same artist, or multiple artists can have very similar styles with a similar subject, but should be classified as not the same artist.
+This project aims to predict whether two artworks are by the same artist using a neural network. This is a difficult problem, as portrayed by the examples below: a single artist can have multiple styles or paint radically different subjects, but should still be classified as the same artist, or multiple artists can have very similar styles with a similar subject, but should be classified as not the same artist.
 
 Same artist (Matisse):
 
@@ -54,7 +54,14 @@ For the Siamese network, the last 2 layers of the classifier block were removed.
 For the classification model, the final classifier layer was replaced with a linear layer going from 4096 features to 52 features, which was then passed to argmax to yield the artist prediction for a single image. To yield predictions of whether or not two works were by the same artist, both images were passed through the model trained to classify artists and the two outputs were compared to yield the final binary prediction.
 
 ## Results
-Various hyperparameters were tried for the two approaches:
+Of the two approaches taken, the best model of each type was tested.
+
+The Siamese network model was unable to discriminate between pairs that were by the same artist or different artists, classifying all pairs as by different artists. (AUC=0.5)
+
+The classifier model accurately predicted artist 85.9% of the time during training and 44.8% of the time on validation. When classifying whether a pair of images were by the same artist, the model achieved 95.5% accuracy with an AUC of 0.632 on the unbalanced test dataset. The confusion matrix is below:
+| 9744 | 258 |
+|---|---|
+| 200 | 82 |
 
 ## Future directions
 With more time, we wanted to try training our own image classifier network trained on artworks, since perhaps features that are good for classifying photo images are not as relevant to art.
